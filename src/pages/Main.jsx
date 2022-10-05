@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../components/Logo";
 import StyledButton from "../components/StyledButton";
@@ -17,7 +18,9 @@ export default function Main() {
           standard dummy text ever since the 1500s...
         </h2>
       </Box>
-      <StyledButton text={"Register"}></StyledButton>
+      <Link to={"./RegisterScreen"}>
+        <StyledButton text={"Register"} />
+      </Link>
       <Box>
         <h2>
           Already a client? <span>Click here to login</span>
