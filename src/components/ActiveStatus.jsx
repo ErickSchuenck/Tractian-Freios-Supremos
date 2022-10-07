@@ -22,7 +22,7 @@ export default function ActiveStatus({ type, length }) {
   return (
     <Container>
       <ActiveStatusIcon iconColor={iconColor}>
-        <ion-icon name="hammer-outline" />
+        <ion-icon name="alert-circle-outline" />
       </ActiveStatusIcon>
       <h1>{length}</h1>
     </Container>

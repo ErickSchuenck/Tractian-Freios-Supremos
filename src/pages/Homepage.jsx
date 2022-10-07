@@ -43,6 +43,30 @@ export default function Homepage() {
         },
       ],
     },
+    {
+      name: "Unit2",
+      status: "medium",
+      necessities: [
+        {
+          critical: [],
+          urgent: [
+            {
+              id: 2,
+              type: "lack of resource",
+              details: "jorginho's hammer broke 😪",
+            },
+          ],
+          notUrgent: [
+            {
+              id: 3,
+              type: "repair",
+              details:
+                "maria is unhappy, please send her another kitten image...",
+            },
+          ],
+        },
+      ],
+    },
   ];
 
   return (

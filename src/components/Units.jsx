@@ -9,7 +9,7 @@ export default function Units({ unit }) {
   if (unit.status === "good") {
     statusColor = "#bee4be";
   }
-  if (unit.status === "in need of attention") {
+  if (unit.status === "medium") {
     statusColor = "#e0e4be";
   }
   if (unit.status === "critical") {
@@ -24,15 +24,15 @@ export default function Units({ unit }) {
           <ActiveStatus
             type={"critical"}
             length={unit.necessities[0].critical.length}
-          >
-            <ion-icon name="hammer-outline" />
-          </ActiveStatus>
-          <ActiveStatus type={"urgent"} length={11}>
-            <ion-icon name="hammer-outline" />
-          </ActiveStatus>
-          <ActiveStatus type={"notUrgent"} length={11}>
-            <ion-icon name="hammer-outline" />
-          </ActiveStatus>
+          />
+          <ActiveStatus
+            type={"urgent"}
+            length={unit.necessities[0].urgent.length}
+          />
+          <ActiveStatus
+            type={"notUrgent"}
+            length={unit.necessities[0].notUrgent.length}
+          />
         </ActiveStatusRow>
       </Left>
 
@@ -111,5 +111,5 @@ const UnitPicture = styled.div`
   border-radius: 5px;
   background: url(${(props) => props.img});
   background-size: cover;
-  transform: rotate(90deg);
+  transform: rotate(270deg);
 `;
