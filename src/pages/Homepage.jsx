@@ -7,7 +7,43 @@ import UserInfo from "../components/UserInfo";
 import Units from "../components/Units";
 
 export default function Homepage() {
-  const units = [{ name: "unit1", status: "good" }];
+  const units = [
+    {
+      name: "Unit1",
+      status: "good",
+      necessities: [
+        {
+          critical: [
+            {
+              id: 0,
+              type: "other",
+              details: "too much rain, factory is going underwater!!!!!!!!!",
+            },
+            {
+              id: 1,
+              type: "lack of resource",
+              details: "we need more coal to keep burning the furnace!!!",
+            },
+          ],
+          urgent: [
+            {
+              id: 2,
+              type: "repair",
+              details: "jorginho's hammer broke 😪",
+            },
+          ],
+          notUrgent: [
+            {
+              id: 3,
+              type: "repair",
+              details:
+                "maria is unhappy, please send her another kitten image...",
+            },
+          ],
+        },
+      ],
+    },
+  ];
 
   return (
     <Container>

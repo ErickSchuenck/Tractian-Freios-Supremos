@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import gear from "../assets/gear.gif";
+import ActiveStatus from "./ActiveStatus";
 
 export default function Units({ unit }) {
-  let demandImportance;
   let statusColor;
+
   if (unit.status === "good") {
     statusColor = "#bee4be";
   }
@@ -20,11 +21,18 @@ export default function Units({ unit }) {
       <Left status={statusColor}>
         <UnitPicture img={gear} alt={"gear"}></UnitPicture>
         <ActiveStatusRow>
-          {unit.necessities.map((status) => (
-            <ActiveStatus status={"#fff"}>
-              <ion-icon name="hammer-outline" />
-            </ActiveStatus>
-          ))}
+          <ActiveStatus
+            type={"critical"}
+            length={unit.necessities[0].critical.length}
+          >
+            <ion-icon name="hammer-outline" />
+          </ActiveStatus>
+          <ActiveStatus type={"urgent"} length={11}>
+            <ion-icon name="hammer-outline" />
+          </ActiveStatus>
+          <ActiveStatus type={"notUrgent"} length={11}>
+            <ion-icon name="hammer-outline" />
+          </ActiveStatus>
         </ActiveStatusRow>
       </Left>
 
@@ -57,7 +65,7 @@ const Container = styled.div`
     cursor: pointer;
     :hover {
       transform: scale(1.1);
-      color: #994343;
+      color: #6fc8da;
     }
   }
   h1 {
@@ -77,28 +85,6 @@ const Container = styled.div`
 
 const ActiveStatusRow = styled.div`
   position: absolute;
-`;
-
-const ActiveStatus = styled.div`
-  transform: translate(-50%, 0);
-  height: 20px;
-  width: 20px;
-  background-color: ${(props) => props.status};
-  margin: 2px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  ion-icon {
-    margin: 0;
-    text-align: center;
-    font-size: 14px;
-    color: black;
-    :hover {
-      transform: none;
-      color: black;
-    }
-  }
 `;
 
 const Icons = styled.div`
@@ -125,4 +111,5 @@ const UnitPicture = styled.div`
   border-radius: 5px;
   background: url(${(props) => props.img});
   background-size: cover;
+  transform: rotate(90deg);
 `;

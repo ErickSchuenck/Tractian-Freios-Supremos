@@ -6,6 +6,7 @@ export const GlobalStyles = createGlobalStyle`
         --primary-font: 'Poppins', sans-serif;
         --logo-font: 'Koulen', cursive;
         --background-color: linear-gradient(90deg, rgba(30,59,142,1) 0%, rgba(37,98,233,1) 100%);
+        --theme-color: rgba(37,98,233,1);
     }
     
     *{

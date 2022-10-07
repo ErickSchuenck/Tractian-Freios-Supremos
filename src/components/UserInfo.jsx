@@ -12,9 +12,10 @@ export default function UserInfo() {
         <h1>Worker Name</h1>
         <h2>Worker Position</h2>
         <h1>Actions:</h1>
-        <h2>Report Malfunctioning</h2>
+        <h2>Report malfunctioning</h2>
         <h2>Make Request</h2>
-        <h2>Check Unit Status</h2>
+        <h2>Change Unit Status</h2>
+        <h2>Change Machine Status</h2>
       </Infos>
     </Container>
   );
@@ -64,5 +65,9 @@ const Infos = styled.div`
   h2 {
     color: gray;
     font-size: 14px;
+    cursor: pointer;
+    :hover {
+      color: var(--theme-color);
+    }
   }
 `;
